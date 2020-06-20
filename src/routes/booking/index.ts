@@ -1,5 +1,6 @@
 import * as express from 'express';
-import { isLoggedIn } from '../utils/isLoggedIn';
+// function for token authorization
+// import { isLoggedIn } from '../utils/isLoggedIn';
 
 import { createBookingRules } from './validators/create-booking-rule';
 import { getBookingRules } from './validators/get-booking-rule';
@@ -17,6 +18,7 @@ import { listBookingByStatus } from './get-by-status';
 
 export const booking = express.Router();
 
+// user isLoggedIn as middleware for token auth
 booking.post('/create-booking', createBookingRules, createBooking);
 booking.post('/get-booking', getBookingRules, getBooking);
 booking.post('/list-booking', listBookingRules, listBooking);

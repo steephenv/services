@@ -1,4 +1,5 @@
 import * as express from 'express';
+// function for token authorization
 import { isLoggedIn } from '../utils/isLoggedIn';
 
 import { createServiceRules } from './validators/create-service-rule';
@@ -15,6 +16,7 @@ import { listServices } from './list-all-services';
 
 export const service = express.Router();
 
+// user isLoggedIn as middleware for token auth
 service.post('/create-service', createServiceRules, createService);
 service.post('/get-service', getServiceRules, getService);
 service.post('/list-services', listServiceRules, listServices);
