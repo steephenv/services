@@ -12,7 +12,7 @@ app:
     pass: 
 docsUrl: 
 database:
-  url: mongodb://localhost:27017/gym-test
+  url: mongodb://localhost:27017/booking-test
 
 AWS_BUCKET_NAME: 
 AWS_ACCESS_KEY_ID: 

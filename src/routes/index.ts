@@ -7,6 +7,7 @@ import { swaggerSpec } from './swagger';
 import { utils } from './utils';
 import { user } from './user';
 import { service } from './services';
+import { booking } from './booking';
 
 // import { attachTokenData } from './access-control/attach-token-data';
 import { isLoggedIn } from './utils/isLoggedIn';
@@ -17,6 +18,7 @@ export const apis = express.Router();
 apis.use('/utils', isLoggedIn, utils);
 apis.use('/user', user);
 apis.use('/service', service);
+apis.use('/booking', booking);
 // load docs if requested
 if (getConfig('app.docs')) {
   // tslint:disable-next-line:no-var-requires
