@@ -1,0 +1,39 @@
+/service/create-service:
+  post:
+    summary: api for create service.
+    tags:
+      - Service
+    description: api for create service
+    parameters:
+      - name: X-Requested-With
+        description: set value to XMLHttpRequest if you are making an xhr request
+        in: header
+        required: true
+        default: XMLHttpRequest
+      - name: Body
+        description: ""
+        in: body
+        required: true
+        schema:
+          type: object
+          required:
+            - serviceName
+            - serviceType        
+            - description          
+            - amount          
+          properties:
+            serviceName:
+              type: string
+              example: serviceName
+            serviceType: 
+              type: string
+              example: serviceType
+            description: 
+              type: string
+              example: description
+            amount: 
+              type: string
+              example: 1000
+    responses:
+      200:
+        description: "successful attempt, returns `success message`"

@@ -1,0 +1,27 @@
+/service/get-service:
+  post:
+    summary: api for get service.
+    tags:
+      - Service
+    description: api for get service
+    parameters:
+      - name: X-Requested-With
+        description: set value to XMLHttpRequest if you are making an xhr request
+        in: header
+        required: true
+        default: XMLHttpRequest
+      - name: Body
+        description: ""
+        in: body
+        required: true
+        schema:
+          type: object
+          required:
+            - serviceId
+          properties:
+            serviceId:
+              type: string
+              example: serviceId
+    responses:
+      200:
+        description: "successful attempt, returns `success message`"
